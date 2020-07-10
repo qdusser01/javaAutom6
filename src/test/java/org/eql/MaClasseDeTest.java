@@ -13,20 +13,22 @@ public class MaClasseDeTest {
 	String jdd_poste="Mathématiques";
 	float jdd_salaire=50000;
 	
-	Enseignant enseignant;
+	IEmployeEcole ie;
 
 	@Before
 	public void SetUp(){
 		
 		
 	}
-	@Ignore
+	@Test
 	public void test() {
 
+		boolean jdd_absence=true;
+		System.out.println("TEST 1");
 		Eleve eleve = new Eleve("Bern", "Jean-Charles", "2016");
-		eleve.setAbsent(false);
+		eleve.setAbsent(jdd_absence);
 		System.out.println(eleve.isAbsent());
-		assertEquals(true, eleve.isAbsent());
+		assertEquals(jdd_absence, eleve.isAbsent());
 		assertTrue(eleve.isAbsent());
 
 	}
@@ -36,12 +38,13 @@ public class MaClasseDeTest {
 	public void test2() {
 		//jeux de données:
 		System.out.println("TEST n°2");
-		enseignant = new Enseignant (jdd_nom,jdd_prenom);
-		enseignant.setSalaires(jdd_salaire);
-		enseignant.setPoste(jdd_poste);
-		enseignant.sePresenter();
-		assertEquals(jdd_salaire,enseignant.getSalaires(),0);
-		assertEquals(jdd_poste,enseignant.getPoste());
+		ie = new Enseignant(jdd_nom,jdd_prenom);
+		System.out.println(ie.getPoste().toUpperCase());
+		ie.setSalaires(jdd_salaire);
+		ie.setPoste(jdd_poste);
+		ie.sePresenter();
+		assertEquals(jdd_salaire,ie.getSalaires(),0);
+		assertEquals(jdd_poste,ie.getPoste());
 	
 	}
 	
@@ -49,14 +52,15 @@ public class MaClasseDeTest {
 	
 	public void test3() {
 		System.out.println("TEST n°3");
-		enseignant= new Enseignant (jdd_nom,jdd_prenom);
+		ie= new PersonnelAdministratif(jdd_nom,jdd_prenom);
+		System.out.println(ie.getPoste().toUpperCase());
 		int jdd_taux=10;
 		float jdd_expected_new_salaire= jdd_salaire+jdd_salaire*jdd_taux/100;
 	
-		enseignant.setSalaires(jdd_salaire);
-		Ecole.augmentation(enseignant, jdd_taux);
-		assertTrue(enseignant.getSalaires()>jdd_salaire);
-		assertEquals(jdd_expected_new_salaire, enseignant.getSalaires(),0.0f);
+		ie.setSalaires(jdd_salaire);
+		Ecole.augmentation(ie, jdd_taux);
+		assertTrue(ie.getSalaires()>jdd_salaire);
+		assertEquals(jdd_expected_new_salaire, ie.getSalaires(),0.0f);
 		
 		
 	}

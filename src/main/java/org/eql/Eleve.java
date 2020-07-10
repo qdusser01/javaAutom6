@@ -1,9 +1,9 @@
 package org.eql;
 
 
-public class Eleve {
+public class Eleve extends Personne {
 
-	private String nom, prenom, commentaire;
+	private String commentaire;
 	private String date_naissance;
 	private int age;
 	private boolean demi_pensionnaire;
@@ -13,8 +13,7 @@ public class Eleve {
 
 
 	public Eleve (String nom, String prenom, String date_naissance) {
-		this.nom=nom;
-		this.prenom=prenom;
+		super(nom,prenom);
 		this.date_naissance=date_naissance;
 	}
 	

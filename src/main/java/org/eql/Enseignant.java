@@ -1,8 +1,8 @@
 package org.eql;
 
-public class Enseignant {
+public class Enseignant extends Personne implements IEmployeEcole{
 	//Création de 4 variables d'instances
-	private String nom, prenom, poste;
+	private String POSTE= "enseignant";
 	private int nb_absences_mois_en_cours;
 	private float salaires;
 	
@@ -22,21 +22,20 @@ public class Enseignant {
 	}
 	
 	public String getPoste() {
-		return poste;
+		return POSTE;
 	}
 	public void setPoste(String poste) {
-		this.poste = poste;
+		this.POSTE = poste;
 	}
 	
 	//Constructeur
 	public Enseignant(String nom, String prenom) {
-		this.nom = nom;
-		this.prenom = prenom;
+		super(nom,prenom);
 	}
 	
 	//Méthode "sePresenter"
 	public void sePresenter() {
-		System.out.println("Bonjour, je m'appelle "+this.prenom+" "+this.nom+".\nJe suis professeur de "+this.poste+" et je gagne "+this.salaires+" euros.");
+		System.out.println("Bonjour, je m'appelle "+this.prenom+" "+this.nom+".\nJe suis professeur de "+this.POSTE+" et je gagne "+this.salaires+" euros.");
 	}
 
 }

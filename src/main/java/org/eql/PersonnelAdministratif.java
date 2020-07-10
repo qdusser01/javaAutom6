@@ -1,11 +1,10 @@
 package org.eql;
 
-public class PersonnelAdministratif {
+public class PersonnelAdministratif extends Personne implements IEmployeEcole {
 	//Création de 4 variables d'instances
-	private String nom, prenom;
 	private int nb_absences_mois_en_cours;
 	private float salaires;
-	private String poste;
+	private String POSTE="Personnel Administratif";
 	
 	//Méthodes getter et setter pour les variables "salaires" et "nb_abs..."
 	public int getNb_absences_mois_en_cours() {
@@ -29,20 +28,19 @@ public class PersonnelAdministratif {
 
 	//Constructeur avec deux paramètres qui renseigneraient les variables « nom » et « prenom » à l’instanciation
 	public PersonnelAdministratif(String nom, String prenom) {
-		this.nom = nom;
-		this.prenom = prenom;
+		super(nom,prenom);
 	}
 	
 	public String getPoste() {
-		return poste;
+		return POSTE;
 	}
 	public void setPoste(String poste) {
-		this.poste = poste;
+		this.POSTE = poste;
 	}
 	
 	//Méthode "sePresenter"
 		public void sePresenter() {
-			System.out.println("Bonjour, je m'appelle "+this.prenom+" "+this.nom+".\nJe suis "+this.poste+" et je gagne "+this.salaires+" euros.");
+			System.out.println("Bonjour, je m'appelle "+this.prenom+" "+this.nom+".\nJe suis "+this.POSTE+" et je gagne "+this.salaires+" euros.");
 		}
 
 }
