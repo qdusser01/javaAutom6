@@ -64,6 +64,14 @@ public class MaClasseDeTest {
 		
 		
 	}
+	@Test
+	
+	public void test4() {
+		Eleve eleve1 =  new Eleve("Jean", "Testeur","1990");
+		eleve1.setNiveau_classe(NiveauClasse.CE2);
+		assertEquals("CE2",eleve1.getNiveau_classe().toString());
+		
+	}
 
 
 }
