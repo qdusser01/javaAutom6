@@ -20,7 +20,7 @@ public class MaClasseDeTest {
 		
 		
 	}
-	@Ignore
+	@Test
 	public void test() {
 
 		Eleve eleve = new Eleve("Bern", "Jean-Charles", "2016");
