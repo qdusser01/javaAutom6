@@ -11,5 +11,9 @@ public final class Ecole {
 		
 		admin.setSalaires(admin.getSalaires()+(admin.getSalaires()*taux/100));
 	}
+	
+	public void SALUTTOUTLEMONDE() {
+		
+	}
 
 }
