@@ -10,7 +10,7 @@ public class PersonnelAdministratif extends Personne implements IEmployeEcole {
 	public int getNb_absences_mois_en_cours() {
 		return nb_absences_mois_en_cours;
 	}
-	
+	 
 	/**
 	 * Cette méthode permet de renseigner le nombre d'absence du prof
 	 * @param (int) nb_absences_mois_en_cours = le nombre d'absence du professeur
@@ -43,4 +43,7 @@ public class PersonnelAdministratif extends Personne implements IEmployeEcole {
 			System.out.println("Bonjour, je m'appelle "+this.prenom+" "+this.nom+".\nJe suis "+this.POSTE+" et je gagne "+this.salaires+" euros.");
 		}
 
+		public void demanderAugmentation(int taux) {
+			Ecole.augmentationConditionnelle(this, taux);
+		}
 }

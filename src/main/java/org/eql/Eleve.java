@@ -16,12 +16,19 @@ public class Eleve extends Personne {
 		super(nom,prenom);
 		this.date_naissance=date_naissance;
 	}
+	public Eleve (String nom, String prenom, int age) {
+		super(nom,prenom);
+		this.age=age;
+	}
 	
+	
+	public String getNom() {
+		return nom;
+	}
 	
 	public int getAge() {
 		return age;
 	}
-
 
 	public void setAge(int age) {
 		this.age = age;
